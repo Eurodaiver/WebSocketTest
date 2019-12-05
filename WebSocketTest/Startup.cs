@@ -58,6 +58,7 @@ namespace WebSocketTest
                 {
                     if (context.WebSockets.IsWebSocketRequest)
                     {
+                        //если это веб сокет запрос - отправитьт зеркальный ответ
                         WebSocket webSocket = await context.WebSockets.AcceptWebSocketAsync();
                         await Echo(context, webSocket);
                     }
